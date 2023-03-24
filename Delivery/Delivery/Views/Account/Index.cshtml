@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div>
+    <form action="~/Account/Login" method="post" class="d-flex flex-column w-25 m-auto align-items-center">
+        <input type="text" name="user"/>
+        <input type="password" name="pass"/>
+        <button type="submit" style="width:fit-content;">Đăng nhập</button>
+    </form>
+</div>
+
