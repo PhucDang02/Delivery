@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanlygiaohang11Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DH">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaVanDon" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoTenNG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SdtNG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HotenNN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiNN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SdtNN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="quanlygiaohang11Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DHs" EntityType="Self.DH" />
+    <EntitySet Name="DH_DaNhan" EntityType="quanlygiaohang11Model.DH_DaNhan" />
+  </EntityContainer>
+  <EntityType Name="DH_DaNhan">
+    <Key>
+      <PropertyRef Name="MaDH_DaNhan" />
+    </Key>
+    <Property Name="MaDH_DaNhan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="Int32" />
+    <Property Name="MaVanDon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HoTenNG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SdtNG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HotenNN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiNN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SdtNN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

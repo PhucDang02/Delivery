@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanlygiaohang11Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DH">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaVanDon" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoTenNG" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChiNG" Type="nvarchar" MaxLength="50" />
+    <Property Name="SdtNG" Type="nvarchar" MaxLength="30" />
+    <Property Name="HotenNN" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChiNN" Type="nvarchar" MaxLength="30" />
+    <Property Name="SdtNN" Type="nvarchar" MaxLength="30" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="DH_DaNhan">
+    <Key>
+      <PropertyRef Name="MaDH_DaNhan" />
+    </Key>
+    <Property Name="MaDH_DaNhan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDH" Type="int" />
+    <Property Name="MaVanDon" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoTenNG" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChiNG" Type="nvarchar" MaxLength="50" />
+    <Property Name="SdtNG" Type="nvarchar" MaxLength="30" />
+    <Property Name="HotenNN" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChiNN" Type="nvarchar" MaxLength="30" />
+    <Property Name="SdtNN" Type="nvarchar" MaxLength="30" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="quanlygiaohang11ModelStoreContainer">
+    <EntitySet Name="DH" EntityType="Self.DH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DH_DaNhan" EntityType="Self.DH_DaNhan" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

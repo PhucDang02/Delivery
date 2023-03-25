@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quanlygiaohang11ModelStoreContainer" CdmEntityContainer="quanlygiaohang11Entities">
+    <EntitySetMapping Name="DHs">
+      <EntityTypeMapping TypeName="quanlygiaohang11Model.DH">
+        <MappingFragment StoreEntitySet="DH">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="MaVanDon" ColumnName="MaVanDon" />
+          <ScalarProperty Name="HoTenNG" ColumnName="HoTenNG" />
+          <ScalarProperty Name="DiaChiNG" ColumnName="DiaChiNG" />
+          <ScalarProperty Name="SdtNG" ColumnName="SdtNG" />
+          <ScalarProperty Name="HotenNN" ColumnName="HotenNN" />
+          <ScalarProperty Name="DiaChiNN" ColumnName="DiaChiNN" />
+          <ScalarProperty Name="SdtNN" ColumnName="SdtNN" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DH_DaNhan">
+      <EntityTypeMapping TypeName="quanlygiaohang11Model.DH_DaNhan">
+        <MappingFragment StoreEntitySet="DH_DaNhan">
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="SdtNN" ColumnName="SdtNN" />
+          <ScalarProperty Name="DiaChiNN" ColumnName="DiaChiNN" />
+          <ScalarProperty Name="HotenNN" ColumnName="HotenNN" />
+          <ScalarProperty Name="SdtNG" ColumnName="SdtNG" />
+          <ScalarProperty Name="DiaChiNG" ColumnName="DiaChiNG" />
+          <ScalarProperty Name="HoTenNG" ColumnName="HoTenNG" />
+          <ScalarProperty Name="MaVanDon" ColumnName="MaVanDon" />
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="MaDH_DaNhan" ColumnName="MaDH_DaNhan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
