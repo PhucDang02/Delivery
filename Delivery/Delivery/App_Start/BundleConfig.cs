@@ -18,7 +18,8 @@ namespace Delivery
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
-
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/App/*.js"));
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
             bundles.Add(new Bundle("~/Content/bootstrap").Include(
