@@ -14,26 +14,52 @@ namespace Delivery.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
         string connString = @"Data Source=.;Initial Catalog=""Giao Hàng"";Integrated Security=True";
         SqlConnection conn = null;
-        public ActionResult Index()
+        public ActionResult Login(int id = -1)
         {
+            if(id==0)
+            {
+                ViewBag.message = "Tài khoản hoặc mật khẩu không đúng";
+            }            
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult LoginValidation()
         {
-            var session = (List<ChucNang>) Session[CommonConstants.CHUC_NANG];
-            if (session != null) {
-                Response.Redirect("~/Home");
-            }
             conn = new SqlConnection(connString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("KiemTraChucNang",conn);
+            SqlCommand cmd;
+            SqlDataAdapter sqlDataAdapter;
+            //Kiểm tra tồn tại tài khoản
+            string user = Request.Form["username"];
+            string pass = Request.Form["password"];
+
+            cmd = new SqlCommand("KiemTraDangNhap", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@user", SqlDbType.Text).Value = user;
+            cmd.Parameters.Add("@pass", SqlDbType.Text).Value = pass;
+            sqlDataAdapter = new SqlDataAdapter(cmd);
+
+            var returnPara = cmd.Parameters.Add("@Return", SqlDbType.Int);
+            returnPara.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            //result 0="Sai tài khoản hoặc mật khẩu", 1="Đúng"
+            int result = (int)returnPara.Value;
+
+            if (result == 0)
+            {
+                return RedirectToAction("Login",new { id = 0 });
+            }
+            else
+            {
+            //Lấy thông tin tài khoản
+
+            //Lấy các chức năng mà tài khoản đăng nhập có thể dùng
+            cmd = new SqlCommand("KiemTraChucNang",conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@maChucVu",SqlDbType.Int).Value=1;
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+            sqlDataAdapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlDataAdapter.Fill(dt);
             List<ChucNang> chucNangs = new List<ChucNang>();
@@ -46,9 +72,12 @@ namespace Delivery.Controllers
                 chucNangs.Add(chucNang);
             }
 
+            Session.Add(CommonConstants.PHIEN_DANG_NHAP, 1);
             Session.Add(CommonConstants.CHUC_NANG,chucNangs);
             conn.Close();
-            return View("Index");
+            }
+            
+            return null;
         }
         
     }
