@@ -1,0 +1,67 @@
+﻿@model Login.Models.User
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+                @Html.AntiForgeryToken()
+<body>
+    <div class="container">
+        <div class="row">
+            <div style="border-radius: 25px; font-family: Roboto;" class="mx-auto card border-0 shadow my-5 w-75">
+                <form>
+                    <h4 class="mt-4 ms-5">Thêm tài khoản</h4>
+                    @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+                    <hr style="width: 95%;" class=" mx-auto">
+                    <div class="d-flex justify-content-around mt-5">
+                        <div style="width: 40%;" class="mb-3">
+                            <label for="" class="form-label">Role</label>
+                            <select style="max-width: none" class="form-select" name="" id="">
+                                <option value="0">--Select--</option>
+                                <option value="1">admin</option>
+                            </select>
+                        </div>
+                        <div style="width: 40%;" class="mb-3">
+                <label for="" class="form-label">Họ tên</label>
+                <input style="max-width: none;" type="text"
+                       class="form-control p-2" />
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around mt-5 mb-5">
+                        <div style="width: 40%;" class="mb-3">
+                            <label for="" class="form-label">Username</label>
+                            @Html.EditorFor(model => model.userName, new { htmlAttributes = new { @class = "form-control p-2 mw-100", @maxlength = "50" } })
+                            @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
+                        </div>
+                        <div style="width: 40%;" class="mb-3">
+                            <label for="" class="form-label">Password</label>
+                            @Html.EditorFor(model => model.userPass, new { htmlAttributes = new { @class = "form-control p-2 mw-100" } })
+                            @Html.ValidationMessageFor(model => model.userPass, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end text-lg-end">
+                        <div style="width: 20%;" class="mt-2 me-3">
+                            @Html.ActionLink("Hủy", "Index", "User", new { @class = "p-2 w-100", @style = " text-decoration: none;  background: #FFFFFF; color: #2D9147; border: 2px solid #2D9147; border-radius: 30px;" })
+                        </div>
+                        <button style="margin-right: 5%; width: 10%; border:none; border-radius: 30px; color: whitesmoke; background: linear-gradient(90deg, #54BF5A 0%, #228542 100%);"
+                                class=" p-2 mb-4 me-5" type="submit">
+                            Thêm
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+}
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
