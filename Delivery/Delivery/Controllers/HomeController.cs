@@ -1,5 +1,4 @@
 ﻿using Delivery.Common;
-using Delivery.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;

@@ -235,3 +235,7 @@ C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\obj\Debug\Delivery.csproj.CoreCo
 C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\obj\Debug\Delivery.csproj.CopyComplete
 C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\obj\Debug\Delivery.dll
 C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\obj\Debug\Delivery.pdb
+C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\bin\EntityFramework.dll
+C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\bin\EntityFramework.SqlServer.dll
+C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\bin\EntityFramework.xml
+C:\Users\NNP\Desktop\Delivery\Delivery\Delivery\bin\EntityFramework.SqlServer.xml

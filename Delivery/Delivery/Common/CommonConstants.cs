@@ -15,6 +15,5 @@ namespace Delivery.Common
 
         //Store Procedure
         public static string GET_USER_INFO = "KiemTraTaiKhoan";
-        public static string 
     }
 }
