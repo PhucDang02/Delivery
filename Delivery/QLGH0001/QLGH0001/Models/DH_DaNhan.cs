@@ -11,7 +11,8 @@ namespace QLGH0001.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+
     public partial class DH_DaNhan
     {
         public int MaDH_DaNhan { get; set; }
